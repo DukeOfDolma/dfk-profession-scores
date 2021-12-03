@@ -1,6 +1,6 @@
 # DeFi Kingdoms Profession Scores Extension
 
-This extensions adds profession scores to hero cards using [the same method provided by DFK Watch](https://dfkwatch.web.app/about/heroranking) in their scoring data.
+This extensions adds profession scores to hero cards using [the same method provided by Kingdom Watch](https://kingdom.watch/about/heroranking ) in their scoring data.
 
 Example:
 
