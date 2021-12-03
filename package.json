@@ -1,11 +1,10 @@
 {
-  "name": "chrome-extension-boilerplate-react",
-  "version": "4.2.0",
-  "description": "A chrome extension boilerplate built with React 17, Webpack 5, and Webpack Dev Server 4",
+  "name": "dfk-profession-scores",
+  "version": "1.0.0",
+  "description": "Show DeFi Kingdoms profession scores on hero cards.",
   "license": "MIT",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/lxieyang/chrome-extension-boilerplate-react.git"
+    "type": "git"
   },
   "scripts": {
     "build": "node utils/build.js",
