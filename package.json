@@ -7,7 +7,7 @@
     "type": "git"
   },
   "scripts": {
-    "build": "node utils/build.js",
+    "build": "node utils/build.js && zip -r build.zip build",
     "start": "node utils/webserver.js",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
