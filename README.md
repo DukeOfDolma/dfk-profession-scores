@@ -22,3 +22,7 @@ The chrome web store page for this is pending review, but in the meantime you ca
    2. Check `Developer mode`
    3. Click on `Load unpacked extension`
    4. Select the `build` folder.
+
+## Contact
+
+Look for the gudetama on Twitter at [@dukeofdolma](https://twitter.com/dukeofdolma) or Discord at duke#0561
