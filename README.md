@@ -2,12 +2,17 @@
 
 ## Features
 
-This extensions adds profession scores to hero cards using [the code provided by DFK Watch](https://dfkwatch.web.app/about/heroranking).
+This extensions adds profession scores to hero cards using [the same method provided by DFK Watch](https://dfkwatch.web.app/about/heroranking) in their scoring data.
 
 Example:
+
 <img src="src/assets/img/example.png" width="256"/>
 
-## Installing and Running
+## Install
+
+The chrome web store page for this is pending review, but in the meantime you can drop the [build.zip](https://github.com/DukeOfDolma/dfk-profession-scores/raw/main/build.zip) file into your `chrome://extensions` tab to install.
+
+## Local Development
 
 1. Check if your [Node.js](https://nodejs.org/) version is >= **14**.
 5. Run `npm install` to install the dependencies.
