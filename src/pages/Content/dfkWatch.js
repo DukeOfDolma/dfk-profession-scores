@@ -158,7 +158,7 @@ statGrowth.set("paladin", {
   endurance: 80,
   dexterity: 40
 })
-statGrowth.set("darkknight", {
+statGrowth.set("darkKnight", {
   strength: 85,
   intelligence: 70,
   wisdom: 35,
@@ -208,7 +208,7 @@ statGrowth.set("sage", {
   endurance: 50,
   dexterity: 40
 })
-statGrowth.set("dreadknight", {
+statGrowth.set("dreadKnight", {
   strength: 85,
   intelligence: 65,
   wisdom: 65,
