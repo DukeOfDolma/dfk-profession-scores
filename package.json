@@ -1,13 +1,13 @@
 {
   "name": "dfk-profession-scores",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Show DeFi Kingdoms profession scores on hero cards.",
   "license": "MIT",
   "repository": {
     "type": "git"
   },
   "scripts": {
-    "build": "node utils/build.js && cd build && zip -r ../build.zip ./*",
+    "build": "rm -r ./build ./build.zip && node utils/build.js && cd build && zip ../build.zip ./*",
     "start": "node utils/webserver.js",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
