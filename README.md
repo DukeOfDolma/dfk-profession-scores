@@ -8,7 +8,7 @@ Example:
 
 ## Install
 
-The chrome web store page for this is pending review, but in the meantime you can drop the [build.zip](https://github.com/DukeOfDolma/dfk-profession-scores/raw/main/build.zip) file into your `chrome://extensions` tab to install.
+Download and install the extension from the **[chrome web store page](https://chrome.google.com/webstore/detail/defi-kingdoms-profession/pklfcddomaflmgkinpcmendfkkdopnlp)**.
 
 ## Local Development
 
