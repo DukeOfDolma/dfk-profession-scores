@@ -25,7 +25,12 @@ function updateCards(cards) {
     const stats = {}
     const statGrid = card.querySelector('[class*="styles_statList"]')
     const statValues = statGrid.querySelectorAll('[class*="styles_statPoint"]')
-    statValues.forEach((stat, i) => stats[STAT_MAP[i]] = parseInt(stat.textContent, 10))
+    let statTotal = 0
+    statValues.forEach((stat, i) => {
+      const statVal = parseInt(stat.textContent, 10)
+      stats[STAT_MAP[i]] = statVal
+      statTotal += statVal
+    })
 
     const statBoosts = []
     const statBoost1 = STAT_ABBR_MAP[statGrid.querySelector('[class*="styles_statBoost_"]')?.textContent]
@@ -50,6 +55,9 @@ function updateCards(cards) {
 
     const rarity = card.querySelector('[class*="styles_cardRarity"]').textContent;
 
+    const statsHeader = card.querySelectorAll('h3')[0]
+    statsHeader.innerHTML = `${statsHeader.innerText} <span style="font-size: 14px">(${statTotal})</span>`
+
     const hero = {
       stats,
       professions,
@@ -69,8 +77,8 @@ function updateCards(cards) {
     }
 
     professionNames.forEach((professionName, i) => {
-      professionName.style = 'line-height: 14px';
-      professionName.innerHTML = `${professionName.innerHTML}<br /><span style="font-size: 8px; color: white;">Score: ${scores[SKILL_MAP[i]]}</span>`
+      professionName.style = 'line-height: 16px';
+      professionName.innerHTML = `${professionName.innerHTML}<br /><span style="font-size: 13px; color: white;">S: ${scores[SKILL_MAP[i]]}</span>`
     })
 
     // Mark the card as annotated so we don't parse it again.
