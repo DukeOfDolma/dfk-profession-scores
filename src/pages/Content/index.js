@@ -84,6 +84,8 @@ function updateCards(cards) {
       professionName.innerHTML = `${professionName.innerHTML}<br /><span style="font-size: 13px; color: white;">S: ${scores[SKILL_MAP[i]]}</span>`
     })
 
+    console.log(statFilter, scoreFilter)
+
     if (statFilter && scoreFilter && scores[statFilter] < scoreFilter) {
       card.style.setProperty('opacity', 0.5);
     }
@@ -95,6 +97,9 @@ function updateCards(cards) {
 
 function addScoreFilter(sortElem) {
   sortElem.classList.add(ACTIVE_CLASS)
+
+  scoreFilter = null
+  statFilter = null
 
   const left = document.createElement('span');
   left.style.setProperty('margin-left', '32px')
