@@ -16,6 +16,9 @@ const STAT_ABBR_MAP = {
 }
 const SKILL_MAP = ['mining', 'gardening', 'fishing', 'foraging']
 
+let scoreFilter = null
+let statFilter = null
+
 function updateCards(cards) {
   cards.forEach(card => {
     if (card.classList.contains(ACTIVE_CLASS)) {
@@ -81,15 +84,73 @@ function updateCards(cards) {
       professionName.innerHTML = `${professionName.innerHTML}<br /><span style="font-size: 13px; color: white;">S: ${scores[SKILL_MAP[i]]}</span>`
     })
 
+    if (statFilter && scoreFilter && scores[statFilter] < scoreFilter) {
+      card.style.setProperty('opacity', 0.5);
+    }
+
     // Mark the card as annotated so we don't parse it again.
     card.classList.add(ACTIVE_CLASS)
   })
 }
 
+function addScoreFilter(sortElem) {
+  sortElem.classList.add(ACTIVE_CLASS)
+
+  const left = document.createElement('span');
+  left.style.setProperty('margin-left', '32px')
+  left.style.setProperty('margin-right', '0')
+  left.innerText = 'Highlight';
+
+  const profSelect = document.createElement('select');
+  profSelect.innerHTML = `
+    <option value=''>None</option>
+    <option value='mining'>Mining</option>
+    <option value='gardening'>Gardening</option>
+    <option value='fishing'>Fishing</option>
+    <option value='foraging'>Foraging</option>
+  `;
+  profSelect.setAttribute('style', `
+    background: none;
+    color: white;
+    border: none;
+    padding: 8px;
+    margin: 8px;
+    cursor: pointer;
+    border-bottom: 1px white solid;
+  `);
+  profSelect.addEventListener('change', e => statFilter = e.currentTarget.value)
+
+  const middle = document.createElement('span');
+  middle.innerText = 'Above';
+
+  const scoreInput = document.createElement('input');
+  scoreInput.setAttribute('type', 'number');
+  scoreInput.addEventListener('change', e => scoreFilter = e.currentTarget.value)
+  scoreInput.setAttribute('style', `
+    background: none;
+    color: white;
+    border: none;
+    border-bottom: 1px white solid;
+    width: 60px;
+    padding: 4px;
+  `)
+
+  sortElem.appendChild(left)
+  sortElem.appendChild(profSelect)
+  sortElem.appendChild(middle)
+  sortElem.appendChild(scoreInput)
+}
+
 const observer = new MutationObserver(function (mutations, obs) {
-  const elems = document.querySelectorAll('.cardContainer');
-  if (elems.length) {
-    updateCards(elems);
+  const cardElems = document.querySelectorAll('.cardContainer');
+  if (cardElems.length) {
+    updateCards(cardElems);
+  }
+
+  const sortElem = document.querySelector('.sort-wrapper')
+
+  if (sortElem && !sortElem.classList.contains(ACTIVE_CLASS)) {
+    addScoreFilter(sortElem)
   }
 });
 
