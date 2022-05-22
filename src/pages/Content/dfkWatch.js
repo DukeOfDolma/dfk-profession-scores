@@ -12,7 +12,6 @@ const professionStats = {
 
 // valuate one profession
 export function valuateProfession(heroData, profession) {
-
   const [stat1name, stat2name] = professionStats[profession]
 
   // How many levels left before 100

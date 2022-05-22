@@ -25,6 +25,9 @@ function updateCards(cards) {
       return;
     }
 
+    // Mark the card as annotated so we don't parse it again.
+    card.classList.add(ACTIVE_CLASS)
+
     const stats = {}
     const statGrid = card.querySelector('[class*="styles_statList"]')
     const statValues = statGrid.querySelectorAll('[class*="styles_statPoint"]')
@@ -84,14 +87,9 @@ function updateCards(cards) {
       professionName.innerHTML = `${professionName.innerHTML}<br /><span style="font-size: 13px; color: white;">S: ${scores[SKILL_MAP[i]]}</span>`
     })
 
-    console.log(statFilter, scoreFilter)
-
     if (statFilter && scoreFilter && scores[statFilter] < scoreFilter) {
       card.style.setProperty('opacity', 0.5);
     }
-
-    // Mark the card as annotated so we don't parse it again.
-    card.classList.add(ACTIVE_CLASS)
   })
 }
 
